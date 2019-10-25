@@ -1,0 +1,47 @@
+﻿<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+
+
+<div class="container col-md-8" style="border:2px solid green;border-radius:10px;padding:10px">
+    <div class="form-group">
+        <label>متن پیام</label>
+        <input class="form-control" id="txtmessage" />
+    </div>
+    <div class="form-group">
+        <label>گیرنده</label>
+        <select class="form-control" id="ddlonlineusers"></select>
+    </div>
+    <button class="btn btn-success" id="btnsend">ارسال</button>
+    <div class="form-group" style="background-color:lightpink" id="div1">
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var connection = new signalR.HubConnectionBuilder()
+                .withUrl("/myChatRoom").build();
+
+        connection.start().then(function () {
+            alert('Connected Successfully')
+            connection.invoke("RegisterUser", '@User.Identity.Name');
+            connection.on("SendMessageServerToClient", function (username, message) {
+                $(div1).prepend(`<b>${username}: </b>${message}<br/>`)
+            })
+            connection.on("RefreshOnlineUsers", function (onlineusers) {
+                var html = `<option value=''> همه کاربران </option>`;
+                $(onlineusers).each(function (index, user) {
+                    html += `<option value='${user}'>${user}</option>`
+                })
+                $(ddlonlineusers).html(html);
+            })
+
+        }).catch(function (err) { alert(err.toString()) })
+
+        $(btnsend).click(function () {
+            connection.invoke("SendMessageClientToServer", '@User.Identity.Name',
+                $(txtmessage).val(), $(ddlonlineusers).val());
+        })
+
+    })
+</script>
+
+

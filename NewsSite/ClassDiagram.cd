@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="newsSite.Controllers.AccountController">
+    <Position X="4.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAwAAAAAAACAACCggAAAAAIgAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Controllers.ChatRoomController">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ChatRoomController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Controllers.CommentController">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAQAAAAAAAAAAAAAAAAAACBAAAAEAAAAAA=</HashCode>
+      <FileName>Controllers\CommentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Controllers.HomeController">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAABAAAAAAQAQAACAAAAAAAEAAAAQAAAAEQAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Areas.Bloggers.Controllers.PostController">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAEAAgQAABAAAAAAAAAAAAAAAABAAEAAIAAAAA=</HashCode>
+      <FileName>Areas\Bloggers\Controllers\PostController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Areas.Identity.CustomPasswordHasher">
+    <Position X="0.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Areas\Identity\CustomPasswordHasher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Areas.Identity.DBConnectionStringEncryptor">
+    <Position X="3.25" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAAAAAAAAQABCAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Identity\DBConnectionStringEncryptor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.ImageThumbnailMaker">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ImageThumbnailMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.ArticleViewModel">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAkAAAAABAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\ArticleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.CommentViewModel">
+    <Position X="18" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\CommentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.LoginViewModel">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.SignUpViewModel">
+    <Position X="13.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAiAAAAAAAAAAAAQAAAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Models\ViewModels\SignUpViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.SitePropertiesViewModel">
+    <Position X="15.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\SitePropertiesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.ViewModels.AdminInfo">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAGAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\SitePropertiesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.Article">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAkAAgAQBAAAAAAAAABQAABAAAAAAKAA=</HashCode>
+      <FileName>Models\Article.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Author" />
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="newsSite.Models.Category">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Models.Comment">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAAAgAEAAAAAQAgAAACAAAAAA=</HashCode>
+      <FileName>Models\Comment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Article" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="newsSite.Models.ErrorViewModel">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Areas.Identity.Data.ApplicationUser">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Areas\Identity\Data\ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsSite.Areas.Admins.Controllers.ManageUsersController">
+    <Position X="0.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAEAAACAAAA=</HashCode>
+      <FileName>Areas\Admins\Controllers\ManageUsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

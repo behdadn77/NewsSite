@@ -1,0 +1,62 @@
+﻿@model Article
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+<div class="col-md-9 technology-left">
+    <div class="business">
+        <div class=" blog-grid2">
+            @if (Model.Image != null)
+            {
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Image)" class="img-responsive" alt="@Model.Title">
+            }
+            else
+            {
+                <img src="~/Layout/images/1.jpg" class="img-responsive" alt="@Model.Title">
+            }
+            <div class="blog-text">
+                @if (User.Identity.IsAuthenticated && (User.Identity.Name == Model.Author.UserName || (await AuthorizationService.AuthorizeAsync(User, "AdminPolicy")).Succeeded))
+                {
+                    <div class="" style="border:2px dashed;border-color:orangered; padding:2px; margin-top:8px; float:right;">
+                        <a class="btn btn-warning" style="margin-right:4px;" href="/bloggers/post/EditArticle/@Model.Id">Edit</a>
+                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="/bloggers/post/DeleteArticle/@Model.Id">Delete</a>
+                    </div>
+                }
+                <br />
+                <h5>@Model.Title</h5>
+                <p>@Model.Body</p>
+            </div>
+        </div>
+        <h2>Comment</h2>
+        @if (Model.Comments != null)
+        {
+            @foreach (var item in Model.Comments.ToList())
+            {
+                <div class="comment-top">
+                    <div class="media-left">
+                        <a href="#">
+                            <img src="~/Layout/images/si.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        @if (User.Identity.IsAuthenticated && (User.Identity.Name == item.User.UserName || (await AuthorizationService.AuthorizeAsync(User, "BloggerPolicy")).Succeeded))
+                        {
+                            <a class="btn btn-danger" style="float:right" onclick="return confirm('Are you sure?')" asp-route-id="@item.Id" asp-action="deletecommentasync" asp-controller="comment">Delete</a>
+                        }
+                        <h4 class="media-heading">@item.User.FirstName @item.User.LastName</h4>
+                        <p>@item.Text</p>
+                        <p>@item.DateTime</p>
+                    </div>
+                </div>
+            }
+        }
+        <div class="comment">
+            <h3>Leave a Comment</h3>
+            <div class=" comment-bottom">
+                <form asp-action="PostCommentAsync" asp-controller="comment">
+                    <input type="hidden" name="PostId" value="@Model.Id" />
+                    <textarea placeholder="Message" name="Text"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
